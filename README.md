@@ -5,7 +5,7 @@ a small Bash script to update the system and update the mirrorlists
 ## 1. Clone This Repository by Running
    ` git clone https://github.com/ShadowReactorBlack/Arch-Update `
 ## 2. After Cloning Install Dependencies
-   ` sudo pacman -Syyu reflector rsync curl `
+   ` sudo pacman -Syyu reflector rsync curl flatpak`
 ## 3. Cd Into The Directory
       ` cd Arch-Update `
 ## 4. Place The Files In The /usr/local/bin Directory      
