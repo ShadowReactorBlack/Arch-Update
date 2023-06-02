@@ -1,0 +1,25 @@
+#!/bin/sh
+
+echo "Starting To Update The System Repos"
+sudo pacman -Syyu 
+echo "Done Update System Repos"
+
+echo "Start To Update Flatpak Packages"
+flatpak update
+echo "Finished Updateing Flatpak Packages"
+
+echo "System Is Done Updateing."
+
+sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+
+echo "Starting To Update Mirrorlists"
+
+sudo reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+echo "Succsesfully Updated System"
+
+echo "Rebuilding Initramfs"
+
+dracut -f
+
+echo "Done Rebuilding Initramfs"
